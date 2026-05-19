@@ -1,4 +1,4 @@
-release_repo_url: git@github.com:orbbec/orbbec_camera_v2-release.git
+release_repo_url: git@github.com:ros2-gbp/orbbec_camera_v2-release.git
 tracks:
   humble:
     actions:
@@ -21,7 +21,7 @@ tracks:
     name: orbbec_camera_v2
     patches: null
     release_inc: '1'
-    release_repo_url: git@github.com:orbbec/orbbec_camera_v2-release.git
+    release_repo_url: git@github.com:ros2-gbp/orbbec_camera_v2-release.git
     release_tag: v2.7.6
     ros_distro: humble
     vcs_type: git
@@ -48,7 +48,7 @@ tracks:
     name: orbbec_camera_v2
     patches: null
     release_inc: '1'
-    release_repo_url: git@github.com:orbbec/orbbec_camera_v2-release.git
+    release_repo_url: git@github.com:ros2-gbp/orbbec_camera_v2-release.git
     release_tag: v2.7.6
     ros_distro: jazzy
     vcs_type: git
