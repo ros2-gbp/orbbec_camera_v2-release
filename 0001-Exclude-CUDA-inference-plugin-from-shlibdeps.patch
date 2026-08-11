@@ -1,0 +1,25 @@
+From e77839bcb7993e23bbd70eab4d1410aa08d3a842 Mon Sep 17 00:00:00 2001
+From: ob-yalian <luotao2025@163.com>
+Date: Mon, 10 Aug 2026 20:19:42 +0800
+Subject: [PATCH] Exclude CUDA inference plugin from shlibdeps
+
+---
+ debian/rules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/debian/rules b/debian/rules
+index f55d86b..c699f52 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -57,7 +57,7 @@ override_dh_shlibdeps:
+ 	# in the install tree and source it.  It will set things like
+ 	# CMAKE_PREFIX_PATH, PKG_CONFIG_PATH, and PYTHONPATH.
+ 	if [ -f "/opt/ros/humble/setup.sh" ]; then . "/opt/ros/humble/setup.sh"; fi && \
+-	dh_shlibdeps -l$(CURDIR)/debian/ros-humble-orbbec-camera//opt/ros/humble/lib/:$(CURDIR)/debian/ros-humble-orbbec-camera//opt/ros/humble/opt/orbbec_camera/lib/
++	dh_shlibdeps -Xlibengine_infer_encry.so -l$(CURDIR)/debian/ros-humble-orbbec-camera//opt/ros/humble/lib/:$(CURDIR)/debian/ros-humble-orbbec-camera//opt/ros/humble/opt/orbbec_camera/lib/
+ 
+ override_dh_auto_install:
+ 	# In case we're installing to a non-standard location, look for a setup.sh
+-- 
+2.34.1
+
