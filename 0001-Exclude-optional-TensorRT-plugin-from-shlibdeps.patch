@@ -1,0 +1,25 @@
+From 63b3ef7a21a1895c59b74a53674fd64f9f23b7f6 Mon Sep 17 00:00:00 2001
+From: ob-yalian <luotao2025@163.com>
+Date: Tue, 11 Aug 2026 10:59:39 +0800
+Subject: [PATCH] Exclude optional TensorRT plugin from shlibdeps
+
+---
+ debian/rules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/debian/rules b/debian/rules
+index ebf731c..af07d98 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -57,7 +57,7 @@ override_dh_shlibdeps:
+ 	# in the install tree and source it.  It will set things like
+ 	# CMAKE_PREFIX_PATH, PKG_CONFIG_PATH, and PYTHONPATH.
+ 	if [ -f "/opt/ros/jazzy/setup.sh" ]; then . "/opt/ros/jazzy/setup.sh"; fi && \
+-	dh_shlibdeps -l$(CURDIR)/debian/ros-jazzy-orbbec-camera//opt/ros/jazzy/lib/:$(CURDIR)/debian/ros-jazzy-orbbec-camera//opt/ros/jazzy/opt/orbbec_camera/lib/
++	dh_shlibdeps -Xlibengine_infer_encry.so -l$(CURDIR)/debian/ros-jazzy-orbbec-camera//opt/ros/jazzy/lib/:$(CURDIR)/debian/ros-jazzy-orbbec-camera//opt/ros/jazzy/opt/orbbec_camera/lib/
+ 
+ override_dh_auto_install:
+ 	# In case we're installing to a non-standard location, look for a setup.sh
+-- 
+2.34.1
+
