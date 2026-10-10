@@ -1,4 +1,4 @@
-From e77839bcb7993e23bbd70eab4d1410aa08d3a842 Mon Sep 17 00:00:00 2001
+From e60785e275cb796181d2ab21046c05390acf1453 Mon Sep 17 00:00:00 2001
 From: ob-yalian <luotao2025@163.com>
 Date: Mon, 10 Aug 2026 20:19:42 +0800
 Subject: [PATCH] Exclude CUDA inference plugin from shlibdeps
