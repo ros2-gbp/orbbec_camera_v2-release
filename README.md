@@ -1,3 +1,7 @@
+## orbbec_camera_v2 (lyrical) - 2.10.6-1 (2026-10-10)
+
+Released all three packages from `v2.10.6` using Bloom 0.13.0. SDK inference plugin excluded from dependency scanning on Resolute and Trixie; no additional dependency version constraints.
+
 ## orbbec_camera_v2 (jazzy) - 2.10.6-1 (2026-10-10)
 
 Released all three packages from `v2.10.6` using Bloom 0.13.0. SDK inference plugin excluded from dependency scanning on Noble and Bookworm; no additional dependency version constraints.
