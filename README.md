@@ -1,3 +1,16 @@
+## orbbec_camera_v2 (humble) - 2.10.6-1 (2026-10-10)
+
+Released from upstream tag `v2.10.6` using Bloom 0.13.0.
+
+Packages released:
+- `orbbec_camera`
+- `orbbec_camera_msgs`
+- `orbbec_description`
+
+Previous Humble release: `2.9.3-2`.
+The existing Debian patch excluding `libengine_infer_encry.so` from dependency scanning is retained.
+No additional dependency version constraints were introduced in this release.
+
 ## orbbec_camera_v2 (humble) - 2.9.3-2
 
 The packages in the `orbbec_camera_v2` repository were released into the `humble` distro by running `/usr/bin/bloom-release orbbec_camera_v2 --ros-distro humble --track humble --non-interactive --no-web --override-release-repository-url https://github.com/ros2-gbp/orbbec_camera_v2-release.git --override-release-repository-push-url https://github.com/ros2-gbp/orbbec_camera_v2-release.git` on `Wed, 12 Aug 2026 07:29:14 -0000`
