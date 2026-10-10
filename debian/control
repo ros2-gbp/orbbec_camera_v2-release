@@ -1,0 +1,12 @@
+Source: ros-lyrical-orbbec-camera
+Section: misc
+Priority: optional
+Maintainer: yalian <yalian@orbbec.com>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, libgflags-dev, libgl1-mesa-dev, libglu1-mesa-dev, libgoogle-glog-dev, libopencv-dev, libssl-dev, libyaml-cpp-dev, nlohmann-json3-dev, pkg-config, ros-lyrical-ament-cmake, ros-lyrical-ament-cmake-gtest <!nocheck>, ros-lyrical-ament-index-cpp, ros-lyrical-ament-lint-auto, ros-lyrical-ament-lint-common, ros-lyrical-backward-ros, ros-lyrical-builtin-interfaces, ros-lyrical-camera-info-manager, ros-lyrical-cv-bridge, ros-lyrical-diagnostic-msgs, ros-lyrical-diagnostic-updater, ros-lyrical-geometry-msgs, ros-lyrical-image-publisher, ros-lyrical-image-transport, ros-lyrical-message-filters, ros-lyrical-orbbec-camera-msgs (>= 2.10.6), ros-lyrical-rcl-interfaces, ros-lyrical-rclcpp, ros-lyrical-rclcpp-action, ros-lyrical-rclcpp-components, ros-lyrical-rmw, ros-lyrical-sensor-msgs, ros-lyrical-statistics-msgs, ros-lyrical-std-msgs, ros-lyrical-std-srvs, ros-lyrical-tf2, ros-lyrical-tf2-msgs, ros-lyrical-tf2-ros, ros-lyrical-tf2-sensor-msgs, ros-lyrical-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-orbbec-camera
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libgflags-dev, libgl1-mesa-dev, libglu1-mesa-dev, libgoogle-glog-dev, libopencv-dev, libssl-dev, libyaml-cpp-dev, nlohmann-json3-dev, python3-psutil, python3-tabulate, python3-yaml, ros-lyrical-ament-index-cpp, ros-lyrical-ament-index-python, ros-lyrical-ament-lint-auto, ros-lyrical-ament-lint-common, ros-lyrical-backward-ros, ros-lyrical-builtin-interfaces, ros-lyrical-camera-info-manager, ros-lyrical-cv-bridge, ros-lyrical-diagnostic-msgs, ros-lyrical-diagnostic-updater, ros-lyrical-geometry-msgs, ros-lyrical-image-publisher, ros-lyrical-image-transport, ros-lyrical-launch, ros-lyrical-launch-ros, ros-lyrical-message-filters, ros-lyrical-orbbec-camera-msgs (>= 2.10.6), ros-lyrical-rcl-interfaces, ros-lyrical-rclcpp, ros-lyrical-rclcpp-action, ros-lyrical-rclcpp-components, ros-lyrical-rclpy, ros-lyrical-rmw, ros-lyrical-sensor-msgs, ros-lyrical-statistics-msgs, ros-lyrical-std-msgs, ros-lyrical-std-srvs, ros-lyrical-tf2, ros-lyrical-tf2-msgs, ros-lyrical-tf2-ros, ros-lyrical-tf2-sensor-msgs, ros-lyrical-ros-workspace
+Description: Orbbec Camera package
