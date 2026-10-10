@@ -99,10 +99,12 @@ tracks:
     devel_branch: v2-main
     name: orbbec_camera_v2
     patches: null
-    release_inc: '0'
+    release_inc: '1'
     release_repo_url: git@github.com:ros2-gbp/orbbec_camera_v2-release.git
     release_tag: v2.10.6
     ros_distro: rolling
     vcs_type: git
     vcs_uri: https://github.com/orbbec/OrbbecSDK_ROS2.git
     version: 2.10.6
+    last_release: v2.10.6
+    last_version: 2.10.6
