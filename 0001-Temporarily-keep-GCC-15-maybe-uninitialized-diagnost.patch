@@ -1,0 +1,31 @@
+From 085d57499d972e706744c57be9029194a4087d50 Mon Sep 17 00:00:00 2001
+From: ob-yalian <luotao2025@163.com>
+Date: Tue, 13 Oct 2026 11:18:55 +0800
+Subject: [PATCH] Temporarily keep GCC 15 maybe-uninitialized diagnostics
+ nonfatal for Rolling
+
+---
+ CMakeLists.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 58f3aa0..57dbb8c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -252,6 +252,13 @@ endmacro()
+ 
+ # Define library and nodes
+ add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
++# Temporary GCC 15 workaround for message_filters template diagnostics.
++# Keep the warning visible without blocking Rolling binary packages.
++if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU"
++   AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 15
++   AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 16)
++    target_compile_options(${PROJECT_NAME} PRIVATE -Wno-error=maybe-uninitialized)
++endif()
+ if(ORBBEC_MESSAGE_FILTERS_USES_RCLCPP_QOS)
+     target_compile_definitions(${PROJECT_NAME} PRIVATE ORBBEC_MESSAGE_FILTERS_USES_RCLCPP_QOS)
+ endif()
+-- 
+2.34.1
+
