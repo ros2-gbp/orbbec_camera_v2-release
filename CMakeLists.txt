@@ -252,6 +252,13 @@ endmacro()
 
 # Define library and nodes
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
+# Temporary GCC 15 workaround for message_filters template diagnostics.
+# Keep the warning visible without blocking Rolling binary packages.
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU"
+   AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 15
+   AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 16)
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wno-error=maybe-uninitialized)
+endif()
 if(ORBBEC_MESSAGE_FILTERS_USES_RCLCPP_QOS)
     target_compile_definitions(${PROJECT_NAME} PRIVATE ORBBEC_MESSAGE_FILTERS_USES_RCLCPP_QOS)
 endif()
