@@ -1,3 +1,7 @@
+## orbbec_camera_v2 (rolling) - 2.10.6-2 (2026-10-13)
+
+Release-only temporary workaround: keep GCC 15 `maybe-uninitialized` diagnostics visible but nonfatal for the `orbbec_camera` library. Upstream remains `v2.10.6`. Existing SDK dependency-scanning exclusions are retained. No local compilation or runtime test performed; Build Farm verification remains pending.
+
 ## orbbec_camera_v2 (rolling) - 2.10.6-1 (2026-10-10)
 
 Released all three packages from the previously imported `v2.10.6` upstream using Bloom 0.13.0. SDK inference plugin excluded from dependency scanning on Resolute and Trixie; no additional dependency version constraints.
