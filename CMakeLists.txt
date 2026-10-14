@@ -337,12 +337,6 @@ add_orbbec_executable(435le_example_node examples/Gemini_435Le_example_node/came
 add_orbbec_executable(ae_awb_lock_test_node examples/ae_awb_lock/ae_awb_lock_test_node.cpp)
 add_orbbec_executable(service_benchmark_node scripts/service_benchmark_node.cpp)
 add_orbbec_executable(image_sync_example_node examples/multi_camera_time_sync/image_sync_example_node.cpp)
-# Match the temporary workaround on the camera library for this separate target.
-if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU"
-   AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 15
-   AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 16)
-    target_compile_options(image_sync_example_node PRIVATE -Wno-error=maybe-uninitialized)
-endif()
 orbbec_target_dependencies(topic_statistics_node statistics_msgs)
 if(ORBBEC_MESSAGE_FILTERS_USES_RCLCPP_QOS)
     target_compile_definitions(image_sync_example_node PRIVATE ORBBEC_MESSAGE_FILTERS_USES_RCLCPP_QOS)
