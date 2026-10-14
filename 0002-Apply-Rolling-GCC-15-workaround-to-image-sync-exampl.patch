@@ -1,0 +1,29 @@
+From 82cb7c779532c5ed9d96581b809eb250eef1a378 Mon Sep 17 00:00:00 2001
+From: ob-yalian <luotao2025@163.com>
+Date: Wed, 14 Oct 2026 14:32:53 +0800
+Subject: [PATCH 2/2] Apply Rolling GCC 15 workaround to image sync example
+
+---
+ CMakeLists.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 57dbb8c..6c62ad1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -337,6 +337,12 @@ add_orbbec_executable(435le_example_node examples/Gemini_435Le_example_node/came
+ add_orbbec_executable(ae_awb_lock_test_node examples/ae_awb_lock/ae_awb_lock_test_node.cpp)
+ add_orbbec_executable(service_benchmark_node scripts/service_benchmark_node.cpp)
+ add_orbbec_executable(image_sync_example_node examples/multi_camera_time_sync/image_sync_example_node.cpp)
++# Match the temporary workaround on the camera library for this separate target.
++if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU"
++   AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 15
++   AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 16)
++    target_compile_options(image_sync_example_node PRIVATE -Wno-error=maybe-uninitialized)
++endif()
+ orbbec_target_dependencies(topic_statistics_node statistics_msgs)
+ if(ORBBEC_MESSAGE_FILTERS_USES_RCLCPP_QOS)
+     target_compile_definitions(image_sync_example_node PRIVATE ORBBEC_MESSAGE_FILTERS_USES_RCLCPP_QOS)
+-- 
+2.34.1
+

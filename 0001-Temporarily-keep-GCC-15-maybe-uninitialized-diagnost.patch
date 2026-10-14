@@ -1,7 +1,7 @@
-From 085d57499d972e706744c57be9029194a4087d50 Mon Sep 17 00:00:00 2001
+From 72043d1109088a2afe51a8ccecc0df7746fd543d Mon Sep 17 00:00:00 2001
 From: ob-yalian <luotao2025@163.com>
 Date: Tue, 13 Oct 2026 11:18:55 +0800
-Subject: [PATCH] Temporarily keep GCC 15 maybe-uninitialized diagnostics
+Subject: [PATCH 1/2] Temporarily keep GCC 15 maybe-uninitialized diagnostics
  nonfatal for Rolling
 
 ---
