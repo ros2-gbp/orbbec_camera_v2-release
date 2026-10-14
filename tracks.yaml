@@ -99,7 +99,7 @@ tracks:
     devel_branch: v2-main
     name: orbbec_camera_v2
     patches: null
-    release_inc: '2'
+    release_inc: '3'
     release_repo_url: git@github.com:ros2-gbp/orbbec_camera_v2-release.git
     release_tag: v2.10.6
     ros_distro: rolling

@@ -1,3 +1,7 @@
+## orbbec_camera_v2 (rolling) - 2.10.6-3 (2026-10-14)
+
+Extend the temporary GCC 15 `maybe-uninitialized` workaround to the independent `image_sync_example_node` target. Keep the existing camera-library workaround and SDK dependency-scanning exclusions. Upstream remains `v2.10.6`. Release metadata checked; local compilation and runtime testing not performed. Build Farm verification pending.
+
 ## orbbec_camera_v2 (rolling) - 2.10.6-2 (2026-10-13)
 
 Release-only temporary workaround: keep GCC 15 `maybe-uninitialized` diagnostics visible but nonfatal for the `orbbec_camera` library. Upstream remains `v2.10.6`. Existing SDK dependency-scanning exclusions are retained. No local compilation or runtime test performed; Build Farm verification remains pending.
