@@ -1,4 +1,4 @@
-From b6349f0c28f1913ad2e6df1ba8e35b60422be80f Mon Sep 17 00:00:00 2001
+From 184c3bb82902e73aa93029caf8c197b7db4b1bb5 Mon Sep 17 00:00:00 2001
 From: ob-yalian <luotao2025@163.com>
 Date: Tue, 11 Aug 2026 10:59:39 +0800
 Subject: [PATCH] Exclude optional TensorRT plugin from shlibdeps
