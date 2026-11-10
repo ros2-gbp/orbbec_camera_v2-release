@@ -1,3 +1,7 @@
+## orbbec_camera_v2 (humble) - 2.10.7-1 (2026-11-10)
+
+Released `orbbec_camera`, `orbbec_camera_msgs`, and `orbbec_description` from upstream `v2-main` at `ffba347cadc96d0457a91af59fc06cdf86052728`, including the 2.10.7 changelogs. Generated with Bloom 0.13.0; retained existing applicable release patches and SDK inference-library dependency-scanning exclusions. Metadata and imported source tree checked. No local compilation performed for this release operation; buildfarm validation is pending.
+
 ## orbbec_camera_v2 (rolling) - 2.10.6-3 (2026-10-14)
 
 Extend the temporary GCC 15 `maybe-uninitialized` workaround to the independent `image_sync_example_node` target. Keep the existing camera-library workaround and SDK dependency-scanning exclusions. Upstream remains `v2.10.6`. Release metadata checked; local compilation and runtime testing not performed. Build Farm verification pending.
