@@ -1,4 +1,4 @@
-From 5fd5c2d56488e3617f86bbd7cbafe217da381359 Mon Sep 17 00:00:00 2001
+From 9cb012b35200869a8cb3714421ee574c83d39036 Mon Sep 17 00:00:00 2001
 From: ob-yalian <luotao2025@163.com>
 Date: Tue, 13 Oct 2026 11:18:55 +0800
 Subject: [PATCH 1/2] Temporarily keep GCC 15 maybe-uninitialized diagnostics
@@ -9,10 +9,10 @@ Subject: [PATCH 1/2] Temporarily keep GCC 15 maybe-uninitialized diagnostics
  1 file changed, 7 insertions(+)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 58f3aa0..57dbb8c 100644
+index 3a51152..365cc7e 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -252,6 +252,13 @@ endmacro()
+@@ -253,6 +253,13 @@ endmacro()
  
  # Define library and nodes
  add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
