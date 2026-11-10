@@ -1,0 +1,12 @@
+Source: ros-humble-orbbec-description
+Section: misc
+Priority: optional
+Maintainer: yalian <yalian@orbbec.com>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-orbbec-description
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-index-python, ros-humble-launch, ros-humble-launch-ros, ros-humble-robot-state-publisher, ros-humble-rviz2, ros-humble-xacro, ros-humble-ros-workspace
+Description: TODO: Package description
