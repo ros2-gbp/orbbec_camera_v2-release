@@ -1,4 +1,0 @@
-string topic_name
-bool has_subscribers
-float64 publish_rate_hz
-float64 delay_ms_avg
