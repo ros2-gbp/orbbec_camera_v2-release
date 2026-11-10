@@ -1,4 +1,4 @@
-From 82cb7c779532c5ed9d96581b809eb250eef1a378 Mon Sep 17 00:00:00 2001
+From 896b3fa37e89df5f4510866c6fd1b9ae361ef2e9 Mon Sep 17 00:00:00 2001
 From: ob-yalian <luotao2025@163.com>
 Date: Wed, 14 Oct 2026 14:32:53 +0800
 Subject: [PATCH 2/2] Apply Rolling GCC 15 workaround to image sync example

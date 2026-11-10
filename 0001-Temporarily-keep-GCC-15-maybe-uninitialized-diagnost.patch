@@ -1,4 +1,4 @@
-From 72043d1109088a2afe51a8ccecc0df7746fd543d Mon Sep 17 00:00:00 2001
+From 5fd5c2d56488e3617f86bbd7cbafe217da381359 Mon Sep 17 00:00:00 2001
 From: ob-yalian <luotao2025@163.com>
 Date: Tue, 13 Oct 2026 11:18:55 +0800
 Subject: [PATCH 1/2] Temporarily keep GCC 15 maybe-uninitialized diagnostics
