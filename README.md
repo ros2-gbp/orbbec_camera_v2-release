@@ -1,3 +1,7 @@
+## orbbec_camera_v2 (lyrical) - 2.10.7-1 (2026-11-10)
+
+Released `orbbec_camera`, `orbbec_camera_msgs`, and `orbbec_description` from upstream `v2-main` at `ffba347cadc96d0457a91af59fc06cdf86052728`, including the 2.10.7 changelogs. Generated with Bloom 0.13.0; retained existing applicable release patches and SDK inference-library dependency-scanning exclusions. Metadata and imported source tree checked. No local compilation performed for this release operation; buildfarm validation is pending.
+
 ## orbbec_camera_v2 (jazzy) - 2.10.7-1 (2026-11-10)
 
 Released `orbbec_camera`, `orbbec_camera_msgs`, and `orbbec_description` from upstream `v2-main` at `ffba347cadc96d0457a91af59fc06cdf86052728`, including the 2.10.7 changelogs. Generated with Bloom 0.13.0; retained existing applicable release patches and SDK inference-library dependency-scanning exclusions. Metadata and imported source tree checked. No local compilation performed for this release operation; buildfarm validation is pending.
