@@ -29,6 +29,7 @@ set(dependencies
     geometry_msgs
     image_transport
     image_publisher
+    pluginlib
     message_filters
     OpenCV
     orbbec_camera_msgs
@@ -292,6 +293,7 @@ orbbec_target_dependencies(${PROJECT_NAME}
     geometry_msgs
     image_transport
     message_filters
+    pluginlib
     rcl_interfaces
     rclcpp_components
     rmw
@@ -324,13 +326,19 @@ add_orbbec_executable(list_camera_profile_mode_node tools/list_camera_profile.cp
 add_orbbec_executable(firmware_update_tool tools/firmware_update_tool.cpp)
 add_orbbec_executable(ip_config_tool tools/ip_config_tool.cpp)
 add_orbbec_executable(set_device_ip tools/ip_config_tool.cpp)
-add_orbbec_executable(topic_statistics_node tools/topic_statistics.cpp)
+# rclcpp 33.2.0 removed the built-in topic statistics API used by this tool.
+if(rclcpp_VERSION VERSION_GREATER_EQUAL 33.2.0)
+    message(STATUS "Skipping topic_statistics_node: rclcpp ${rclcpp_VERSION} no longer provides built-in topic statistics")
+else()
+    add_orbbec_executable(topic_statistics_node tools/topic_statistics.cpp)
+    orbbec_target_dependencies(topic_statistics_node statistics_msgs)
+    install(TARGETS topic_statistics_node DESTINATION lib/${PROJECT_NAME}/)
+endif()
 add_orbbec_executable(ob_benchmark_node tools/ob_benchmark.cpp)
 add_orbbec_executable(435le_example_node examples/Gemini_435Le_example_node/camera_example_node.cpp)
 add_orbbec_executable(ae_awb_lock_test_node examples/ae_awb_lock/ae_awb_lock_test_node.cpp)
 add_orbbec_executable(service_benchmark_node scripts/service_benchmark_node.cpp)
 add_orbbec_executable(image_sync_example_node examples/multi_camera_time_sync/image_sync_example_node.cpp)
-orbbec_target_dependencies(topic_statistics_node statistics_msgs)
 if(ORBBEC_MESSAGE_FILTERS_USES_RCLCPP_QOS)
     target_compile_definitions(image_sync_example_node PRIVATE ORBBEC_MESSAGE_FILTERS_USES_RCLCPP_QOS)
 endif()
@@ -435,7 +443,7 @@ if(DEFINED ENV{BUILDING_PACKAGE})
     install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/scripts/99-obsensor-libusb.rules DESTINATION /etc/udev/rules.d)
 endif()
 
-install(TARGETS list_devices_node list_depth_work_mode_node list_camera_profile_mode_node firmware_update_tool topic_statistics_node  service_benchmark_node ob_benchmark_node 435le_example_node ae_awb_lock_test_node ip_config_tool set_device_ip image_sync_example_node DESTINATION lib/${PROJECT_NAME}/
+install(TARGETS list_devices_node list_depth_work_mode_node list_camera_profile_mode_node firmware_update_tool service_benchmark_node ob_benchmark_node 435le_example_node ae_awb_lock_test_node ip_config_tool set_device_ip image_sync_example_node DESTINATION lib/${PROJECT_NAME}/
 )
 
 if(BUILD_TESTING)
@@ -446,6 +454,14 @@ if(BUILD_TESTING)
     ament_add_gtest(camera_info_distortion_test test/camera_info_distortion_test.cpp)
     target_link_directories(camera_info_distortion_test PRIVATE ${ORBBEC_LIBS_DIR})
     target_link_libraries(camera_info_distortion_test ${PROJECT_NAME})
+
+    ament_add_gtest(image_publisher_passthrough_test test/image_publisher_passthrough_test.cpp)
+    target_link_directories(image_publisher_passthrough_test PRIVATE ${ORBBEC_LIBS_DIR})
+    target_link_libraries(image_publisher_passthrough_test ${PROJECT_NAME})
+
+    ament_add_gtest(stream_status_test test/stream_status_test.cpp)
+    target_link_directories(stream_status_test PRIVATE ${ORBBEC_LIBS_DIR})
+    target_link_libraries(stream_status_test ${PROJECT_NAME})
 endif()
 
 ament_export_include_directories(include)
