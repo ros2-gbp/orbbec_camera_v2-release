@@ -1,4 +1,4 @@
-From 49c3f43deb7d3221869a103810f426c65a7523fc Mon Sep 17 00:00:00 2001
+From c2568490d4bdc84fd371615ece07cda508dc87a8 Mon Sep 17 00:00:00 2001
 From: ob-yalian <luotao2025@163.com>
 Date: Sat, 10 Oct 2026 14:28:10 +0800
 Subject: [PATCH] Exclude bundled inference library from shlibdeps
